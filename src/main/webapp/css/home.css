@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+*{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	dispaly: flex;
+	flex-direction: column; /* header나 footer가 위에서 아래방향으로 흐르게 하기 위해서*/
+	margin: 0;
+	height:100%;
+	padding: 0;
+}
+
+.main-header{ /* class이기 때문에 .으로 시작함*/
+	height: 80px;
+	text-align: center;
+	color: white;
+	background: #555;
+	margin:0;
+	flex: 1;
+	background:linear-gradient(to left, blue, black)
+}
+
+.content-container{
+	position: absolute; /* 위치를 고정하라*/
+	/* top과 left과 되고 꼭짓점은 bottom과 right*/
+	
+	top: 80px;
+	left: 0;/* 위에와 딱 붙는 현상이 일어남*/
+	right: 0; /* 화면 오른쪽 끝에 달라붙게 됨. width100%와 똑같이 됨..*/
+	bottom:30px;
+	display : flex;	
+	flex: 1;
+}
+
+
+.sidebar{
+	width: 240px;
+	background-color: #666;
+	padding: 4px 20px;
+	color: white;
+}
+
+.main{
+	flex: 1;
+	display: flex;
+	background-color: #ddd;	
+	flex-direction: column; 
+	/*여기에 칼럼을 주게 되면 section-header가 위에가고 아래 박스둘이 section-header아래 가게 됨 */
+}
+
+.page-header{
+	background-color: #004141;
+	color: white;
+	font-size: 0.8em;
+	padding: 6px 20px;
+}
+.content{
+	flex: 1;
+	display: flex;	
+	
+	overflow: auto;
+}
+
+.column{
+	padding: 20px;
+	border: 1px solid blue;
+	
+	height: auto;
+}
+
+.column.sub1{
+	flex:3;
+}
+.column.sub2{
+	flex:1;
+}
+footer{
+	flex: 0 1 30px;
+	/* flex: 0 1 30px; */
+	background-color: #c0c0c0;
+	text-align: center;
+	padding: 0.3em;
+	color: white;
+	height: 30px; /*내용이 본문 영역을 침범하는 것을 방지*/
+	
+	display: flex;
+	/* 내부의 address를 중심에 놓기 위해 */
+	align-items: center;
+	justify-content: center;
+	
+}
+
+footer address{
+	color: inherit;
+}
+
+#dsearch{
+	width: 100%;
+	padding: 0.8em;
+	margin: 5px auto;
+	
+}
